@@ -1,32 +1,44 @@
-package handbook.model.dto.password;
+package handbook.model.entity;
 
-public class RicercaPasswordResponseDto {
+import javax.persistence.*;
 
-    private Long id;
+@Entity
+@Table(name = "passwords")
+public class Password {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sequId")
+    private Long sequId;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "username")
     private String username;
 
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "descrizione")
     private String descrizione;
 
+    @Column(name = "flagEliminato")
+    private String flagEliminato;
 
-    public RicercaPasswordResponseDto(Long id, String email, String username, String password, String descrizione) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.descrizione = descrizione;
+    public void setSequId(Long id) {
+        this.sequId = id;
     }
 
-    public Long getId() {
-        return id;
+    public String getFlagEliminato() {
+        return flagEliminato;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setFlagEliminato(String flagEliminato) {
+        this.flagEliminato = flagEliminato;
+    }
+
+    public Long getSequId() {
+        return sequId;
     }
 
     public String getEmail() {

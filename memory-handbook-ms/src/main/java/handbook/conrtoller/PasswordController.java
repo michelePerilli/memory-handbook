@@ -30,4 +30,11 @@ public class PasswordController {
         return passwordService.inserisciPassword(dettaglioRequest);
     }
 
+    @PostMapping(value = "/list")
+    public ResponseEntity<GenericResponseBody> listaPassword(@RequestParam(name = "ordCol", required = false) String ordCol,
+                                                             @RequestParam(name = "ordDir", required = false) String ordDir,
+                                                             Pageable pageable) {
+        return passwordService.listaPassword(pageable);
+    }
+
 }

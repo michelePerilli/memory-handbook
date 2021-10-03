@@ -15,6 +15,7 @@ public class PasswordResponseBody implements GenericResponseBody {
         this.responseDtos = responseDtos;
     }
 
+
     public Page<RicercaPasswordResponseDto> getResponseDtos() {
         return responseDtos;
     }

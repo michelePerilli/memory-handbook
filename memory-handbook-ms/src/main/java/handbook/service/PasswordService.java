@@ -12,4 +12,5 @@ public interface PasswordService {
 
     ResponseEntity<GenericResponseBody> inserisciPassword(DettaglioPasswordDto dto);
 
+    ResponseEntity<GenericResponseBody> listaPassword(Pageable pageable);
 }
