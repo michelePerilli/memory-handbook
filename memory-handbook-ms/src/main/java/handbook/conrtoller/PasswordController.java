@@ -1,20 +1,33 @@
 package handbook.conrtoller;
 
-import handbook.model.dto.RicercaPasswordResponseDto;
-import org.springframework.data.domain.Page;
-import org.springframework.http.HttpStatus;
+import handbook.model.dto.password.DettaglioPasswordDto;
+import handbook.model.dto.password.RicercaPasswordRequestDto;
+import handbook.model.response.GenericResponseBody;
+import handbook.service.PasswordService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = {"/password"})
 public class PasswordController {
 
+    @Autowired
+    private PasswordService passwordService;
+
     @PostMapping(value = "/ricerca")
-    public ResponseEntity<Page<RicercaPasswordResponseDto>> ricercaEsitoSegnalazione() {
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<GenericResponseBody> ricercaPassword(@RequestBody RicercaPasswordRequestDto formRicerca,
+                                                               @RequestParam(name = "ordCol", required = false) String ordCol,
+                                                               @RequestParam(name = "ordDir", required = false) String ordDir,
+                                                               Pageable pageable) {
+        return passwordService.ricercaPassword(formRicerca, ordCol, ordDir, pageable);
+    }
+
+
+    @PostMapping(value = "/inserimento")
+    public ResponseEntity<GenericResponseBody> inserisciSegnalazionePenale(@RequestBody DettaglioPasswordDto dettaglioRequest) {
+        return passwordService.inserisciPassword(dettaglioRequest);
     }
 
 }
