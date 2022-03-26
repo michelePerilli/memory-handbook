@@ -2,11 +2,13 @@ package handbook.model.dto.password;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 /**
  * The type Password dto.
  */
 @Data
+@RequiredArgsConstructor
 @AllArgsConstructor
 public class PasswordDto {
 

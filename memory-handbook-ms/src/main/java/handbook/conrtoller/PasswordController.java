@@ -2,7 +2,6 @@ package handbook.conrtoller;
 
 import handbook.model.dto.password.PasswordDto;
 import handbook.service.PasswordService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +19,16 @@ public class PasswordController {
     /**
      * The Password service.
      */
-    @Autowired
-    private PasswordService passwordService;
+    private final PasswordService passwordService;
+
+    /**
+     * Instantiates a new Password controller.
+     *
+     * @param passwordService the password service
+     */
+    public PasswordController(PasswordService passwordService) {
+        this.passwordService = passwordService;
+    }
 
     /**
      * Ricerca password response entity.
@@ -36,7 +43,6 @@ public class PasswordController {
 
     }
 
-
     /**
      * Inserisci segnalazione penale response entity.
      *
@@ -47,6 +53,7 @@ public class PasswordController {
     public ResponseEntity<Long> inserisciSegnalazionePenale(@RequestBody PasswordDto dettaglioRequest) {
         return passwordService.inserisciPassword(dettaglioRequest);
     }
+
 
     /**
      * Lista password response entity.
