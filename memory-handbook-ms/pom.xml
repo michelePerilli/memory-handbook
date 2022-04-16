@@ -31,6 +31,9 @@
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <properties>
+        <springdoc.version>1.6.6</springdoc.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -61,7 +64,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.25</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,17 +76,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- Swagger -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -100,7 +93,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>28.2-android</version>
+            <version>31.1-android</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

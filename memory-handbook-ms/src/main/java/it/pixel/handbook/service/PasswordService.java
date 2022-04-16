@@ -1,12 +1,12 @@
-package handbook.service;
+package it.pixel.handbook.service;
 
-import handbook.model.dto.password.PasswordDto;
-import handbook.model.entity.Password;
-import handbook.repository.PasswordRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import it.pixel.handbook.model.dto.password.PasswordDto;
+import it.pixel.handbook.model.entity.Password;
+import it.pixel.handbook.repository.PasswordRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 /**
@@ -15,10 +15,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PasswordService {
 
-    /**
-     * The constant FALSE.
-     */
-    private final static String FALSE = "0";
+    String safeToLower(String s) {
+        if (s != null) return s.trim().toLowerCase();
+        else return null;
+    }
+
 
     /**
      * The Repository.
@@ -38,12 +39,15 @@ public class PasswordService {
     /**
      * Ricerca password response entity.
      *
-     * @param dto      the dto
-     * @param pageable the pageable
+     * @param dto the dto
      * @return the response entity
      */
-    public ResponseEntity<Page<PasswordDto>> ricercaPassword(PasswordDto dto, Pageable pageable) {
-        Page<PasswordDto> fromBd = repository.ricercaPassword(dto.getEmail(), dto.getUsername(), dto.getPassword(), dto.getDescrizione(), FALSE, pageable);
+    public ResponseEntity<List<PasswordDto>> ricercaPassword(PasswordDto dto) {
+        List<PasswordDto> fromBd = repository.ricercaPassword(
+                safeToLower(dto.getEmail()),
+                safeToLower(dto.getUsername()),
+                safeToLower(dto.getPassword()),
+                safeToLower(dto.getDescrizione()));
 
         return ResponseEntity.ok(fromBd);
     }
@@ -62,22 +66,20 @@ public class PasswordService {
         entity.setPassword(dto.getPassword());
         entity.setDescrizione(dto.getDescrizione());
         entity.setUsername(dto.getUsername());
-        entity.setFlagEliminato(FALSE);
 
-        repository.save(entity);
+        entity = repository.save(entity);
 
-        return ResponseEntity.ok(entity.getSequId());
+        return ResponseEntity.ok(entity.getId());
     }
 
 
     /**
      * Lista password response entity.
      *
-     * @param pageable the pageable
      * @return the response entity
      */
-    public ResponseEntity<Page<PasswordDto>> listaPassword(Pageable pageable) {
-        Page<PasswordDto> fromBd = repository.ricercaPassword(null, null, null, null, FALSE, pageable);
+    public ResponseEntity<List<PasswordDto>> listaPassword() {
+        List<PasswordDto> fromBd = repository.ricercaPassword(null, null, null, null);
 
         return ResponseEntity.ok(fromBd);
     }

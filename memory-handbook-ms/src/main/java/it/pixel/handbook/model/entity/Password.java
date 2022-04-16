@@ -1,4 +1,4 @@
-package handbook.model.entity;
+package it.pixel.handbook.model.entity;
 
 import lombok.Data;
 
@@ -16,38 +16,38 @@ public class Password {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "sequId")
-    private Long sequId;
+    @Column(name = "id")
+    private Long id;
 
     /**
      * The Email.
      */
     @Column(name = "email")
-    private String email;
+    private String email = "";
 
     /**
      * The Username.
      */
     @Column(name = "username")
-    private String username;
+    private String username = "";
 
     /**
      * The Password.
      */
     @Column(name = "password")
-    private String password;
+    private String password = "";
 
     /**
      * The Descrizione.
      */
     @Column(name = "descrizione")
-    private String descrizione;
+    private String descrizione = "";
 
     /**
      * The Flag eliminato.
      */
-    @Column(name = "flagEliminato")
-    private String flagEliminato;
+    @Column(name = "flag_eliminato")
+    private String flagEliminato = "0";
 
 
 }

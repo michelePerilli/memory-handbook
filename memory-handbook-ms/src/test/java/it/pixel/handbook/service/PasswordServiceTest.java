@@ -1,9 +1,9 @@
-package handbook.service;
+package it.pixel.handbook.service;
 
 import com.google.common.io.Resources;
 import com.google.gson.Gson;
-import handbook.model.dto.password.PasswordDto;
 import io.micrometer.core.instrument.util.IOUtils;
+import it.pixel.handbook.model.dto.password.PasswordDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

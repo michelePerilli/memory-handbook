@@ -1,19 +1,18 @@
-package handbook.conrtoller;
+package it.pixel.handbook.conrtoller;
 
-import handbook.model.dto.password.PasswordDto;
-import handbook.service.PasswordService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import it.pixel.handbook.model.dto.password.PasswordDto;
+import it.pixel.handbook.service.PasswordService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * The type Password controller.
  */
 @RestController
+@CrossOrigin("*")
+@RequestMapping("/api/password")
 public class PasswordController {
 
     /**
@@ -34,13 +33,11 @@ public class PasswordController {
      * Ricerca password response entity.
      *
      * @param formRicerca the form ricerca
-     * @param pageable    the pageable
      * @return the response entity
      */
     @PostMapping(value = "/ricerca")
-    public ResponseEntity<Page<PasswordDto>> ricercaPassword(@RequestBody PasswordDto formRicerca, Pageable pageable) {
-        return passwordService.ricercaPassword(formRicerca, pageable);
-
+    public ResponseEntity<List<PasswordDto>> ricercaPassword(@RequestBody PasswordDto formRicerca) {
+        return passwordService.ricercaPassword(formRicerca);
     }
 
     /**
@@ -50,7 +47,7 @@ public class PasswordController {
      * @return the response entity
      */
     @PutMapping(value = "/inserimento")
-    public ResponseEntity<Long> inserisciSegnalazionePenale(@RequestBody PasswordDto dettaglioRequest) {
+    public ResponseEntity<Long> inserisciPassword(@RequestBody PasswordDto dettaglioRequest) {
         return passwordService.inserisciPassword(dettaglioRequest);
     }
 
@@ -58,12 +55,11 @@ public class PasswordController {
     /**
      * Lista password response entity.
      *
-     * @param pageable the pageable
      * @return the response entity
      */
-    @PostMapping(value = "/list")
-    public ResponseEntity<Page<PasswordDto>> listaPassword(Pageable pageable) {
-        return passwordService.listaPassword(pageable);
+    @GetMapping(value = "/list")
+    public ResponseEntity<List<PasswordDto>> listaPassword() {
+        return passwordService.listaPassword();
     }
 
 }

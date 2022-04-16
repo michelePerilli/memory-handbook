@@ -1,4 +1,4 @@
-package handbook.model.dto.password;
+package it.pixel.handbook.model.dto.password;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ public class PasswordDto {
     /**
      * The Sequ id.
      */
-    private Long sequId;
+    private Long id;
     /**
      * The Email.
      */
@@ -32,5 +32,6 @@ public class PasswordDto {
      * The Descrizione.
      */
     private String descrizione;
+
 
 }

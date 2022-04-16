@@ -1,4 +1,4 @@
-package handbook;
+package it.pixel.handbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +9,6 @@ import java.util.TimeZone;
  * The type Memory handbook app.
  */
 @SpringBootApplication
-//@EnableSwagger2
 public class MemoryHandbookApp {
 
     /**
