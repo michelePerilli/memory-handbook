@@ -5,6 +5,7 @@ import it.pixel.handbook.model.entity.Password;
 import it.pixel.handbook.repository.PasswordRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * The type Password service.
  */
 @Service
+@Transactional
 public class PasswordService {
 
     String safeToLower(String s) {
@@ -48,7 +50,6 @@ public class PasswordService {
                 safeToLower(dto.getUsername()),
                 safeToLower(dto.getPassword()),
                 safeToLower(dto.getDescrizione()));
-
         return ResponseEntity.ok(fromBd);
     }
 

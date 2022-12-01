@@ -47,7 +47,7 @@ public class Password {
      * The Flag eliminato.
      */
     @Column(name = "flag_eliminato")
-    private String flagEliminato = "0";
+    private Boolean flagEliminato = false;
 
 
 }
