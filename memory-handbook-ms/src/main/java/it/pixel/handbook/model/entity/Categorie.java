@@ -1,10 +1,8 @@
 package it.pixel.handbook.model.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
-import java.util.Objects;
 
 /**
  * Project: memory-handbook
@@ -31,16 +29,4 @@ public class Categorie {
     private Boolean flagEliminato;
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Categorie categorie = (Categorie) o;
-        return Objects.equals(id, categorie.id) && Objects.equals(codiCategoria, categorie.codiCategoria) && Objects.equals(descCategoria, categorie.descCategoria) && Objects.equals(flagEliminato, categorie.flagEliminato);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, codiCategoria, descCategoria, flagEliminato);
-    }
 }

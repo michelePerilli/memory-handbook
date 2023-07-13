@@ -2,7 +2,7 @@ package it.pixel.handbook.conrtoller;
 
 import it.pixel.handbook.model.dto.password.PasswordDto;
 import it.pixel.handbook.service.PasswordService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * The type Password controller.
  */
+@AllArgsConstructor
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api")
@@ -22,16 +23,6 @@ public class PasswordController {
      */
     private final PasswordService passwordService;
 
-
-    /**
-     * Instantiates a new Password controller.
-     *
-     * @param passwordService the password service
-     */
-    @Autowired
-    public PasswordController(PasswordService passwordService) {
-        this.passwordService = passwordService;
-    }
 
     /**
      * Ricerca password response entity.

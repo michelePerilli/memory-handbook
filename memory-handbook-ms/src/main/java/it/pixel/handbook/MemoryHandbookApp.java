@@ -2,6 +2,7 @@ package it.pixel.handbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.TimeZone;
 
@@ -9,6 +10,7 @@ import java.util.TimeZone;
  * The type Memory handbook app.
  */
 @SpringBootApplication
+@ComponentScan(value = {"it.pixel"})
 public class MemoryHandbookApp {
 
     /**

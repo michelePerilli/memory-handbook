@@ -1,8 +1,8 @@
 package it.pixel.handbook.model.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 
 /**
  * The type Password.
