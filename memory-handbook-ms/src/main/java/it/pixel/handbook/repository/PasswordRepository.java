@@ -25,7 +25,7 @@ public interface PasswordRepository extends JpaRepository<Password, Long> {
      */
     @Query("SELECT new it.pixel.handbook.model.dto.password.PasswordDto(PW.id, PW.email, PW.username, PW.password, PW.descrizione) " +
             "FROM Password PW " +
-            "WHERE PW.flagEliminato = false " +
+            "WHERE false = false " +
             "AND :email IS NULL OR LOWER(PW.email) LIKE %:email% " +
             "AND :username IS NULL OR LOWER(PW.username) LIKE %:username% " +
             "AND :password IS NULL OR LOWER(PW.password) LIKE %:password% " +
