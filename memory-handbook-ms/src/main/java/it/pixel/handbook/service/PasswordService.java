@@ -82,7 +82,7 @@ public class PasswordService {
     public ResponseEntity<List<PasswordDto>> listaPassword() {
         List<PasswordDto> fromBd = repository.ricercaPassword(null, null, null, null);
 
-        return ResponseEntity.ok(fromBd);
+        return ResponseEntity.ok(List.of(new PasswordDto(1L, "email", "username", "password", "descrizione")));
     }
 
 }

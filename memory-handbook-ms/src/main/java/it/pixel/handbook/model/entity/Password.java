@@ -1,5 +1,6 @@
 package it.pixel.handbook.model.entity;
 
+import it.pixel.handbook.filter.annotation.OnlyNotDeleted;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ import lombok.Data;
  */
 @Data
 @Entity
+@OnlyNotDeleted
 @Table(name = "passwords")
 public class Password {
     /**

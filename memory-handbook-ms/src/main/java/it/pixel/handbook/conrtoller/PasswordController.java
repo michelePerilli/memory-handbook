@@ -3,6 +3,7 @@ package it.pixel.handbook.conrtoller;
 import it.pixel.handbook.model.dto.password.PasswordDto;
 import it.pixel.handbook.service.PasswordService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,11 @@ import java.util.List;
  */
 @AllArgsConstructor
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/api")
+@CrossOrigin(value= "*", origins = "*")
+@RequestMapping(
+        value = "/api/password",
+        consumes = MediaType.APPLICATION_JSON_VALUE
+)
 public class PasswordController {
 
 
@@ -30,7 +34,7 @@ public class PasswordController {
      * @param formRicerca the form ricerca
      * @return the response entity
      */
-    @PostMapping(value = "/password")
+    @PostMapping(value = "/ricerca")
     public ResponseEntity<List<PasswordDto>> ricercaPassword(@RequestBody PasswordDto formRicerca) {
         return passwordService.ricercaPassword(formRicerca);
     }
@@ -41,7 +45,7 @@ public class PasswordController {
      * @param dettaglioRequest the dettaglio request
      * @return the response entity
      */
-    @PutMapping(value = "/password")
+    @PutMapping(value = "")
     public ResponseEntity<Long> inserisciPassword(@RequestBody PasswordDto dettaglioRequest) {
         return passwordService.inserisciPassword(dettaglioRequest);
     }
@@ -52,7 +56,7 @@ public class PasswordController {
      *
      * @return the response entity
      */
-    @GetMapping(value = "/password/list")
+    @GetMapping(value = "/list")
     public ResponseEntity<List<PasswordDto>> listaPassword() {
         return passwordService.listaPassword();
     }
