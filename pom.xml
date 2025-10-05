@@ -22,7 +22,7 @@
     <packaging>jar</packaging>
     <description>Backend</description>
 
-    <name>memory-handbook-ms</name>
+    <name>memory-handbook</name>
     <url>https://maven.apache.org</url>
 
     <parent>
