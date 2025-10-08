@@ -1,4 +1,4 @@
-package it.pixel.handbook.conrtoller;
+package it.pixel.handbook.controller;
 
 import it.pixel.handbook.model.dto.TipologicaDto;
 import it.pixel.handbook.service.TipologicheService;
@@ -28,6 +28,6 @@ public class TipologicheController {
 
     @GetMapping("/categorie")
     public ResponseEntity<List<TipologicaDto>> getCategorie() {
-        return tipologicheService.findAllCategorie();
+        return ResponseEntity.ok(tipologicheService.findAllCategorie());
     }
 }

@@ -1,4 +1,4 @@
-package it.pixel.handbook.filter;
+package it.pixel.handbook.component.filter;
 
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 import org.springframework.beans.factory.annotation.Autowired;

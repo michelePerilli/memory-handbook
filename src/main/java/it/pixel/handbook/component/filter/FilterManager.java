@@ -1,20 +1,15 @@
-package it.pixel.handbook.filter;
+package it.pixel.handbook.component.filter;
 
 
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ScanResult;
-import it.pixel.handbook.filter.annotation.OnlyNotDeleted;
+import it.pixel.handbook.component.filter.annotation.OnlyNotDeleted;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.ListableBeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

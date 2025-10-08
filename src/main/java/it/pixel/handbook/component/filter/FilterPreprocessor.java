@@ -1,21 +1,17 @@
-package it.pixel.handbook.filter;
+package it.pixel.handbook.component.filter;
 
-import it.pixel.handbook.filter.annotation.DisableFilters;
+import it.pixel.handbook.component.filter.annotation.DisableFilters;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
-
-import static it.pixel.handbook.filter.FilterManager.Status.DISABLED;
-import static it.pixel.handbook.filter.FilterManager.Status.ENABLED;
 
 
 @Aspect

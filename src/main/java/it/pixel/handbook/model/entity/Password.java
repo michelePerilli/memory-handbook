@@ -1,6 +1,6 @@
 package it.pixel.handbook.model.entity;
 
-import it.pixel.handbook.filter.annotation.OnlyNotDeleted;
+import it.pixel.handbook.component.filter.annotation.OnlyNotDeleted;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,25 +25,25 @@ public class Password {
      * The Email.
      */
     @Column(name = "email")
-    private String email = "";
+    private String email;
 
     /**
      * The Username.
      */
     @Column(name = "username")
-    private String username = "";
+    private String username;
 
     /**
      * The Password.
      */
     @Column(name = "password")
-    private String password = "";
+    private String password;
 
     /**
      * The Descrizione.
      */
     @Column(name = "descrizione")
-    private String descrizione = "";
+    private String descrizione;
 
     /**
      * The Flag eliminato.

@@ -1,4 +1,4 @@
-package it.pixel.handbook.filter.annotation;
+package it.pixel.handbook.component.filter.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

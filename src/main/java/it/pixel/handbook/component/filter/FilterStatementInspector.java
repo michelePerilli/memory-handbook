@@ -1,7 +1,6 @@
-package it.pixel.handbook.filter;
+package it.pixel.handbook.component.filter;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.expression.*;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
@@ -16,7 +15,6 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.io.StringReader;
