@@ -1,37 +1,20 @@
 package it.pixel.handbook.model.dto.password;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-/**
- * The type Password dto.
- */
-@Data
-@RequiredArgsConstructor
-@AllArgsConstructor
+import java.util.UUID;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class PasswordDto {
 
-    /**
-     * The Sequ id.
-     */
-    private Long id;
-    /**
-     * The Email.
-     */
+    private UUID id;
     private String email;
-    /**
-     * The Username.
-     */
     private String username;
-    /**
-     * The Password.
-     */
     private String password;
-    /**
-     * The Descrizione.
-     */
     private String descrizione;
-
 
 }

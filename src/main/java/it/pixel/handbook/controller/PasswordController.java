@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,7 +26,7 @@ public class PasswordController {
 
 
     @PutMapping(value = "")
-    public ResponseEntity<Long> inserisciPassword(@RequestBody PasswordDto dettaglioRequest) {
+    public ResponseEntity<UUID> inserisciPassword(@RequestBody PasswordDto dettaglioRequest) {
         return ResponseEntity.ok(passwordService.inserisciPassword(dettaglioRequest));
     }
 

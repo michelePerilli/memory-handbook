@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
@@ -24,7 +25,7 @@ public class PasswordService {
         return repository.ricercaPassword(dto);
     }
 
-    public Long inserisciPassword(PasswordDto dto) {
+    public UUID inserisciPassword(PasswordDto dto) {
 
         Password entity = handbookMapper.toEntity(dto);
 
@@ -37,5 +38,6 @@ public class PasswordService {
     public List<PasswordDto> listaPassword() {
         return repository.findAll().stream().map(handbookMapper::toDto).toList();
     }
+
 
 }

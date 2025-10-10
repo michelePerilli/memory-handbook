@@ -12,6 +12,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class TipologicaDto {
-    String codi;
-    String desc;
+    private String codi;
+    private String desc;
 }
