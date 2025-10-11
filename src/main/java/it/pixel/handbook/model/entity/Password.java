@@ -1,9 +1,8 @@
 package it.pixel.handbook.model.entity;
 
 import it.pixel.handbook.component.filter.annotation.OnlyNotDeleted;
-import it.pixel.handbook.model.entity.embedded.Audit;
+import it.pixel.handbook.model.entity.base.Audit;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;

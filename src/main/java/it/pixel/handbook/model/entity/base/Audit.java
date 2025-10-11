@@ -1,7 +1,6 @@
-package it.pixel.handbook.model.entity.embedded;
+package it.pixel.handbook.model.entity.base;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
