@@ -1,10 +1,10 @@
 create extension if not exists "uuid-ossp";
 
-drop schema if exists handbook cascade ;
+drop schema if exists handbook cascade;
 create schema handbook;
 create table handbook.passwords
 (
-    id             uuid default uuid_generate_v4(),
+    id             uuid    default uuid_generate_v4(),
     email          varchar(255),
     username       varchar(255),
     password       varchar(255),
@@ -19,12 +19,16 @@ create table handbook.passwords
 
 create table handbook.utenti
 (
-    uuid uuid default uuid_generate_v4(),
-    sub varchar(255) not null,
-    created_at     timestamp,
-    created_by     varchar(40),
-    updated_at     timestamp,
-    updated_by     varchar(40),
+    uuid         uuid default uuid_generate_v4(),
+    sub          varchar(255) not null,
+    nome         varchar(255),
+    cognome      varchar(255),
+    email        varchar(255),
+    url_immagine varchar(512),
+    created_at   timestamp,
+    created_by   varchar(40),
+    updated_at   timestamp,
+    updated_by   varchar(40),
     constraint pk_utenti primary key (uuid)
 )
 

@@ -16,6 +16,10 @@ public class UtenteServiceImpl implements UtenteService {
     public void salvaUtente(OidcUser user) {
         Utente utente = utenteRepository.findBySub(user.getSubject()).orElse(new Utente());
         utente.setSub(user.getUserInfo().getSubject());
+        utente.setNome(user.getUserInfo().getGivenName());
+        utente.setCognome(user.getUserInfo().getFamilyName());
+        utente.setEmail(user.getUserInfo().getEmail());
+        utente.setUrlImmagine(user.getUserInfo().getPicture());
         utenteRepository.save(utente);
     }
 }

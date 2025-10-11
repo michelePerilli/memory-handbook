@@ -29,4 +29,20 @@ public class Utente extends Audit {
     @Column(name = "sub", nullable = false)
     private String sub;
 
+    @Size(max = 255)
+    @Column(name = "nome")
+    private String nome;
+
+    @Size(max = 255)
+    @Column(name = "cognome")
+    private String cognome;
+
+    @Size(max = 255)
+    @Column(name = "email")
+    private String email;
+
+    @Size(max = 512)
+    @Column(name = "url_immagine", length = 512)
+    private String urlImmagine;
+
 }
